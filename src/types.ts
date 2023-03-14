@@ -3,8 +3,8 @@ import {NavigatorScreenParams} from '@react-navigation/native';
 // NAVIGATION
 
 export type TabParamList = {
-  homeMarket: undefined;
-  homeShoppingCart: undefined;
+  homeMain: undefined;
+  homeOrders: undefined;
   homeMessenger: undefined;
 };
 export type RootStackParamList = {
@@ -27,9 +27,19 @@ export interface UserChatListT {
 }
 
 export interface MarkerType {
+  id: string;
   latlng: {latitude: number; longitude: number};
   title: string;
   description: string;
+}
+
+export interface OrderInfo {
+  id: string;
+  title: string;
+  description: string;
+  reward: number;
+  creator: string;
+  latlng: {latitude: number; longitude: number};
 }
 
 // HELPERS

@@ -32,16 +32,16 @@ export type CheckboxProps = {
 };
 
 export function Checkbox({value, onPress, children}: CheckboxProps) {
-  const {color} = useTheme();
+  const {colors} = useTheme();
   const onPressCheckbox = useCallback(() => {
     onPress(!value);
   }, [value, onPress]);
   return (
     <TouchableOpacity onPress={onPressCheckbox} style={page.container}>
       {value ? (
-        <CheckboxFilled color={color.graphicGreen1} />
+        <CheckboxFilled color={colors.primary} />
       ) : (
-        <CheckboxEmpty color={color.graphicBase2} />
+        <CheckboxEmpty color={colors.graphicBase2} />
       )}
       {children}
     </TouchableOpacity>
@@ -50,8 +50,8 @@ export function Checkbox({value, onPress, children}: CheckboxProps) {
 
 const page = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
-    height: 40,
+    alignItems: 'center',
+    gap: 5,
   },
 });

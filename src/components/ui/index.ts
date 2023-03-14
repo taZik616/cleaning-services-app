@@ -1,7 +1,6 @@
 export * from './text/text';
 export * from './text/error-text';
 export * from './button';
-export * from './icon-button';
 export * from './custom-header';
 export * from './checkbox';
 export * from './spacer';
@@ -20,7 +19,6 @@ export * from './TicketCardColumn';
 export * from './TicketCardRow';
 export * from './categories/categories';
 export * from './headerList';
-export * from './separator';
 export * from './Badge';
 export * from './TextSum';
 export * from './InfoBlockAmount';

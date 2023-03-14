@@ -6,13 +6,13 @@ import {MarkerType} from 'src/types';
 
 interface CustomMapMarkerProps {
   marker: MarkerType;
+  onPressMarker: (id: string) => void;
 }
 
-export function CustomMapMarker({marker}: CustomMapMarkerProps) {
+export function CustomMapMarker({marker, onPressMarker}: CustomMapMarkerProps) {
   return (
     <Marker
-      title={marker.title}
-      description={marker.description}
+      onPress={() => onPressMarker(marker.id)}
       coordinate={marker.latlng}
     />
   );

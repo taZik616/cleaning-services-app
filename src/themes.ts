@@ -82,3 +82,5 @@ export const DARK_THEME: ThemeColors = {
   graphicSecond3: '#454647',
   graphicSecond4: '#616266',
 };
+
+export const SHADOW_COLOR_1 = 'rgba(25, 26, 28, 0.06)';

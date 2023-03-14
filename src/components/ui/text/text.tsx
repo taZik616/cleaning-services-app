@@ -11,13 +11,6 @@ import {
 
 import {useTheme} from 'src/hooks';
 import {Color} from 'src/themeTypes';
-import {IS_IOS} from 'src/variables';
-
-//will be changed to i18next
-/*export type TextValue =
-  | {children: React.ReactNode; i18n?: undefined; i18params?: undefined}
-  | {i18n: I18N; i18params?: Record<string, string>; children?: undefined};
-*/
 
 export type TextProps = Omit<RNTextProps, 'style' | 'children'> & {
   t1?: boolean;
@@ -137,9 +130,6 @@ export function Text({
 
 const shadowColor = '#FF06F4';
 const aquaShadow = '#62F5D4';
-const ibm = IS_IOS ? 'IBM 3270' : '3270';
-const editUndo = IS_IOS ? 'Edit Undo Line BRK' : 'edit-undo-line';
-const KLMN = IS_IOS ? 'KLMN-Flash-Pix' : 'KLMN_Flash_Pix';
 
 const styles = StyleSheet.create({
   shadow: {

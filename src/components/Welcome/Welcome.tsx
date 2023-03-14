@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {Button, Spacer, Text} from 'src/components/ui';
+import {Button, Checkbox, Spacer, Text} from 'src/components/ui';
 import {useThematicStyles} from 'src/hooks';
 import {Color} from 'src/themeTypes';
 
@@ -14,6 +14,7 @@ interface WelcomeProps {
 export function Welcome({onContinue}: WelcomeProps) {
   const {styles} = useThematicStyles(rawStyles);
   const insets = useSafeAreaInsets();
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <>
@@ -21,16 +22,14 @@ export function Welcome({onContinue}: WelcomeProps) {
       <View style={styles.container}>
         <Spacer height={insets.top} />
         <Text t4 style={styles.textStyle} color={Color.primary}>
-          Welcome to
+          Welcome
         </Text>
-        <Text
-          t2
-          color={Color.primary}
-          style={[styles.titleText, styles.textStyle]}>
-          999 Ticketing System
-        </Text>
+        <Checkbox onPress={() => setIsChecked(pr => !pr)} value={isChecked}>
+          <Text t14>Согласен с условиями использования</Text>
+        </Checkbox>
+        <Spacer height={12} />
         <Button style={styles.buttonContainer} onPress={onContinue}>
-          NEXT
+          На главную
         </Button>
         <Spacer height={insets.bottom + 16} />
       </View>

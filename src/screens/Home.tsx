@@ -10,9 +10,9 @@ import {RouteProp} from '@react-navigation/native';
 import {TabBar} from 'src/components/ui';
 import {TabParamList} from 'src/types';
 
-import {HomeMarketScreen} from './HomeMarket';
+import {HomeMainScreen} from './HomeMain';
 import {HomeMessengerScreen} from './HomeMessenger';
-import {HomeShoppingCartScreen} from './HomeShoppingCart';
+import {HomeOrdersScreen} from './HomeOrders';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -29,13 +29,13 @@ export function Home() {
   return (
     <Tab.Navigator tabBar={renderTabBar} screenOptions={{headerShown: false}}>
       <Tab.Screen
-        name="homeMarket"
-        component={HomeMarketScreen}
+        name="homeMain"
+        component={HomeMainScreen}
         options={screenOptions}
       />
       <Tab.Screen
-        name="homeShoppingCart"
-        component={HomeShoppingCartScreen}
+        name="homeOrders"
+        component={HomeOrdersScreen}
         options={screenOptions}
       />
       <Tab.Screen

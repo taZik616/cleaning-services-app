@@ -24,8 +24,8 @@ const navDataById = [
     name: 'Главная',
   },
   {
-    icon: 'cart', // or 'seedling'
-    name: 'Корзина',
+    icon: 'ios-file-tray-full', // or 'md-time-outline'
+    name: 'Заказы',
   },
   {icon: 'chatbubbles', name: 'Сообщения'},
 ];

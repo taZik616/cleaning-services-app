@@ -203,8 +203,9 @@ export function BottomSheet({
         style={[styles.animateView, styles.content, bottomSheetStyle]}>
         <GestureDetector gesture={headerGesture}>
           <Animated.View>
+            <View style={styles.headerPlank} />
             <View style={styles.header}>
-              <Text t6 color={Color.textBase1}>
+              <Text t4 color={Color.textBase1}>
                 {title}
               </Text>
               <Spacer />
@@ -258,6 +259,15 @@ const rawStyles = StyleSheet.create({
     height: 30,
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 8,
+  },
+  headerPlank: {
+    width: '30%',
+    height: 6,
+    marginTop: 12,
     marginBottom: 16,
+    borderRadius: 10,
+    alignSelf: 'center',
+    backgroundColor: Color.graphicSecond1,
   },
 });

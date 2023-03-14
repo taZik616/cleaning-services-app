@@ -50,11 +50,7 @@ export function BlockMessage({
     <View style={[containerStyle, style]}>
       {!hideIcon && <IconComponent size={18} color={colors[color]} />}
       <View style={styles.textContainer}>
-        <Text
-          numberOfLines={numberOfLines}
-          ibm3
-          style={textStyle}
-          color={color}>
+        <Text numberOfLines={numberOfLines} t12 style={textStyle} color={color}>
           {children}
         </Text>
       </View>

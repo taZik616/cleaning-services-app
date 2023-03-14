@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function HomeShoppingCart() {
+export function HomeOrders() {
   return <></>;
 }
