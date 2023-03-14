@@ -1,12 +1,16 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {GiftedChat, IMessage} from 'react-native-gifted-chat';
+
+// @ts-ignore
 import chatLocale from 'dayjs/locale/ru';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import {GiftedChat, IMessage} from 'react-native-gifted-chat';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+
 import {useThematicStyles} from 'src/hooks';
 import {Color} from 'src/themeTypes';
-import {Text} from '../ui';
 import {IS_IOS} from 'src/variables';
+
+import {Text} from '../ui';
 
 export function Chat() {
   const [messages, setMessages] = useState<IMessage[]>([]);
@@ -28,17 +32,15 @@ export function Chat() {
     ]);
   }, []);
 
-  const onSend = useCallback((messages: IMessage[] = []) => {
-    setMessages(previousMessages =>
-      GiftedChat.append(previousMessages, messages),
-    );
+  const onChatSend = useCallback((mess: IMessage[] = []) => {
+    setMessages(previousMessages => GiftedChat.append(previousMessages, mess));
   }, []);
 
   return (
     <GiftedChat
       placeholder="Сообщение"
       locale={chatLocale}
-      renderSend={({onSend, disabled, text, ...p}) => {
+      renderSend={({onSend, disabled, text}) => {
         const handleSend = () => {
           if (text && onSend) {
             onSend({text: text.trim()}, true);
@@ -49,12 +51,11 @@ export function Chat() {
             <TouchableOpacity
               onPress={handleSend}
               style={[
+                styles.sendButton,
                 {
                   marginBottom: bottom + 4,
-                  marginRight: 10,
-                  marginTop: IS_IOS ? 10 : 0,
                 },
-                !IS_IOS && {alignSelf: 'center'},
+                !IS_IOS && styles.centered,
               ]}>
               <Text color={Color.textBlue1} t8>
                 Отправить
@@ -78,7 +79,7 @@ export function Chat() {
           marginTop: 6,
         },
       }}
-      onSend={messages => onSend(messages)}
+      onSend={mess => onChatSend(mess)}
       user={{
         _id: 1,
       }}
@@ -90,11 +91,17 @@ const rawStyles = StyleSheet.create({
   chatInput: {
     backgroundColor: Color.card,
     flex: 1,
-
     color: Color.textBase1,
     fontSize: 16,
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 16,
+  },
+  sendButton: {
+    marginRight: 10,
+    marginTop: IS_IOS ? 10 : 0,
+  },
+  centered: {
+    alignSelf: 'center',
   },
 });

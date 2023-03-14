@@ -1,10 +1,12 @@
 import React from 'react';
+
 import {Image, Pressable, StyleSheet, View} from 'react-native';
+
 import {formatDateLastMessage} from 'src/helpers';
 import {useThematicStyles} from 'src/hooks';
 import {Color} from 'src/themeTypes';
-
 import {UserChatListT} from 'src/types';
+
 import {Text} from './text';
 
 export function UserChatCard({

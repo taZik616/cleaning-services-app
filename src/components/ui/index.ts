@@ -29,3 +29,4 @@ export * from './FormDateTime';
 export * from './FormTextInput';
 export * from './FormField';
 export * from './UserChatCard';
+export * from './CustomMapMarker';

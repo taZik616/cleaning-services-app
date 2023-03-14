@@ -1,7 +1,10 @@
 import React, {useEffect} from 'react';
+
 import {FlatList} from 'react-native';
+
 import {useTypedNavigation} from 'src/hooks';
 import {UserChatListT} from 'src/types';
+
 import {UserChatCard} from '../ui';
 
 interface HomeMessengerProps {

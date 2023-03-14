@@ -26,6 +26,12 @@ export interface UserChatListT {
   lastMessageDate: number;
 }
 
+export interface MarkerType {
+  latlng: {latitude: number; longitude: number};
+  title: string;
+  description: string;
+}
+
 // HELPERS
 
 export type sheetPointsT = [number, number];
